@@ -1,0 +1,34 @@
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\RatchetingInCsharp_10_3_15_2.exe.config
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csprojResolveAssemblyReference.cache
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.Form1.resources
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.Properties.Resources.resources
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csproj.GenerateResource.Cache
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\RatchetingInCsharp_10_3_15_2.exe
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\RatchetingInCsharp_10_3_15_2.pdb
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.exe
+c:\users\khan\documents\visual studio 2013\Projects\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.pdb
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csprojResolveAssemblyReference.cache
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.Form1.resources
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csproj.GenerateResource.Cache
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.exe.config
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.exe.manifest
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.application
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.exe
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.pdb
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.Properties.Resources.resources
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.exe.manifest
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.application
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.exe
+C:\Users\khan\Documents\Visual Studio 2013\Projects\LessMemory\RatchetingInCsharp_10_3_15_2\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.pdb
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.exe.config
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.exe
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.pdb
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.exe.manifest
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.application
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.exe
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\bin\Debug\DavidsRatchetingSimulator.pdb
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.Form1.resources
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.Properties.Resources.resources
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csproj.GenerateResource.Cache
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.exe.manifest
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.application
