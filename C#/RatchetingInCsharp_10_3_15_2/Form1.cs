@@ -288,15 +288,19 @@ namespace RatchetingInCsharp_10_3_15_2
                     H_past[i] = H[i];
                     w_abs[i] = Math.Abs(w[i]);
                 }
+                double max;
 
-                for (int i = 0; i < NumberCycles; i++)
+                for (int k = 0; k <= NumberCycles; k++)
                 {
-                    if (j == i * PointsPerCycle)
+                    if (j == k * PointsPerCycle-2)
                     {
-                        double max = w_abs.Max();
-                        w_max[i] = max;
+                        max = w_abs.Max();
+                        w_max[k] = max;
                     }
                 }
+            pbarProgress.Value = Convert.ToInt32(Convert.ToDouble(j) / Convert.ToDouble(Points) * 100);
+            }
+
             if (rbnSaveOutput.Checked == true && OKpressed == true)
             {             
                 
@@ -346,11 +350,9 @@ namespace RatchetingInCsharp_10_3_15_2
                         {
                             writer.WriteLine(string.Join(delimter, w_max[index]));
                         }
-                    }   
-            }
-            
+                    }               
               
-                pbarProgress.Value = Convert.ToInt32(Convert.ToDouble(j) / Convert.ToDouble(Points) * 100);
+
 
                 chtDisplacement.Series["Displacement (um)"].Points.Clear();
                 for (int i = 1; i < xSteps; i++)

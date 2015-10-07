@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInputNumberCycles = new System.Windows.Forms.TextBox();
             this.btnRunSimulation = new System.Windows.Forms.Button();
@@ -103,17 +103,17 @@
             // 
             // chtDisplacement
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtDisplacement.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtDisplacement.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chtDisplacement.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtDisplacement.Legends.Add(legend2);
             this.chtDisplacement.Location = new System.Drawing.Point(12, 65);
             this.chtDisplacement.Name = "chtDisplacement";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Displacement (um)";
-            this.chtDisplacement.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Displacement (um)";
+            this.chtDisplacement.Series.Add(series2);
             this.chtDisplacement.Size = new System.Drawing.Size(694, 422);
             this.chtDisplacement.TabIndex = 3;
             this.chtDisplacement.Text = "chart1";
@@ -425,12 +425,10 @@
             // rbnSaveOutput
             // 
             this.rbnSaveOutput.AutoSize = true;
-            this.rbnSaveOutput.Checked = true;
             this.rbnSaveOutput.Location = new System.Drawing.Point(526, 596);
             this.rbnSaveOutput.Name = "rbnSaveOutput";
             this.rbnSaveOutput.Size = new System.Drawing.Size(85, 17);
             this.rbnSaveOutput.TabIndex = 40;
-            this.rbnSaveOutput.TabStop = true;
             this.rbnSaveOutput.Text = "Save Output";
             this.rbnSaveOutput.UseVisualStyleBackColor = true;
             // 
