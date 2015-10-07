@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DavidsRatchetingSimulator.exe" size="20992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DavidsRatchetingSimulator.exe" size="22016">
       <assemblyIdentity name="DavidsRatchetingSimulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h21oGAjCjQ/8cKkJwuSQYoFO2c/KPnbiIrFoRF2+Ml4=</dsig:DigestValue>
+        <dsig:DigestValue>YN52gEX+wa2Ql96DuqsinNzSZdANMDhpd5/r9ioIV8s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

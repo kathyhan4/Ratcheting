@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RatchetingInCsharp_10_3_15_2
 {
@@ -19,7 +20,8 @@ namespace RatchetingInCsharp_10_3_15_2
 
         private void btnRunSimulation_Click(object sender, EventArgs e)
         {
-            
+            bool OKpressed = false;
+            string MyFileName = "";
                // If Item1 is selected and radioButton2 
                // is checked, click radioButton1.
                if (rbnSaveOutput.Checked == true)
@@ -31,7 +33,8 @@ namespace RatchetingInCsharp_10_3_15_2
 
                     if(saveFileDialog1.ShowDialog() == DialogResult.OK) 
                     { 
-                        Console.WriteLine(saveFileDialog1.FileName);//Do what you want here
+                        MyFileName = saveFileDialog1.FileName;//Do what you want here
+                        OKpressed = true;
                     } 
 
                }
@@ -294,6 +297,59 @@ namespace RatchetingInCsharp_10_3_15_2
                         w_max[i] = max;
                     }
                 }
+            if (rbnSaveOutput.Checked == true && OKpressed == true)
+            {             
+                
+                string filePath1 = MyFileName + "DisplacementWithX.csv";
+
+                    if (!File.Exists(filePath1))
+                    {
+                        File.Create(filePath1).Close();
+                    }
+                    string delimter = ",";
+                    List<string[]> output = new List<string[]>();
+
+                    //flexible part ... add as many object as you want based on your app logic
+                    /*output.Add(new string[] {"TEST1","TEST2"});
+                    output.Add(new string[] {"TEST3","TEST4"});
+
+                    int length = output.Count;*/
+
+                    using (System.IO.TextWriter writer = File.CreateText(filePath1))
+                    {
+
+                        for (int index = 0; index < xSteps; index++)
+                        {
+                            writer.WriteLine(string.Join(delimter, w[index]));
+                        }
+                    }
+
+                string filePath2 = MyFileName + "MaxDisplacement.csv";
+
+                    if (!File.Exists(filePath2))
+                    {
+                        File.Create(filePath2).Close();
+                    }
+
+                    List<string[]> output2 = new List<string[]>();
+
+                    //flexible part ... add as many object as you want based on your app logic
+                    /*output.Add(new string[] {"TEST1","TEST2"});
+                    output.Add(new string[] {"TEST3","TEST4"});
+
+                    int length = output.Count;*/
+
+                    using (System.IO.TextWriter writer = File.CreateText(filePath2))
+                    {
+
+                        for (int index = 0; index <= NumberCycles; index++)
+                        {
+                            writer.WriteLine(string.Join(delimter, w_max[index]));
+                        }
+                    }   
+            }
+            
+              
                 pbarProgress.Value = Convert.ToInt32(Convert.ToDouble(j) / Convert.ToDouble(Points) * 100);
 
                 chtDisplacement.Series["Displacement (um)"].Points.Clear();
@@ -307,45 +363,30 @@ namespace RatchetingInCsharp_10_3_15_2
     }    
 }
 
-/*
-private void ClickMyRadioButton()
-{
-   // If Item1 is selected and radioButton2 
-   // is checked, click radioButton1.
-   if (listBox1.Text == "Item1" && radioButton2.Checked)
-   {
-      radioButton1.PerformClick();
-   }
-}
-private void button1_Click(object sender, System.EventArgs e)
- {
-     Stream myStream ;
-     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+/* FileName gives the path and root for the file names, must add specifier for which type of file and .csv extension
+string filePath = pathDesktop + "\\mycsvfile.csv";
 
-     saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"  ;
-     saveFileDialog1.FilterIndex = 2 ;
-     saveFileDialog1.RestoreDirectory = true ;
-
-     if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-     {
-         if((myStream = saveFileDialog1.OpenFile()) != null)
-         {
-             // Code to write the stream goes here.
-             myStream.Close();
-         }
-     }
- }
-
- * 
-public static void SaveArrayAsCSV<T>(T[] arrayToSave, string fileName)
-{
-    using (StreamWriter file = new StreamWriter(fileName))
-    {
-        foreach (T item in arrayToSave)
+        if (!File.Exists(filePath))
         {
-            file.Write(item + ",");
+            File.Create(filePath).Close();
         }
-    }
-}
+        string delimter = ",";
+        List<string[]> output = new List<string[]>();
+
+        //flexible part ... add as many object as you want based on your app logic
+        output.Add(new string[] {"TEST1","TEST2"});
+        output.Add(new string[] {"TEST3","TEST4"});
+
+        int length = output.Count;
+
+        using (System.IO.TextWriter writer = File.CreateText(filePath))
+        {
+
+            for (int index = 0; index < length; index++)
+            {
+                writer.WriteLine(string.Join(delimter, output[index]));
+            }
+        }
+
 
  */
