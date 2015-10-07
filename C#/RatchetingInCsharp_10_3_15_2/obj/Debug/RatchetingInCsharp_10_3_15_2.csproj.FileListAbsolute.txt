@@ -32,3 +32,4 @@ C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\De
 C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csproj.GenerateResource.Cache
 C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.exe.manifest
 C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\DavidsRatchetingSimulator.application
+C:\Users\khan\Documents\GitHub\Ratcheting\C#\RatchetingInCsharp_10_3_15_2\obj\Debug\RatchetingInCsharp_10_3_15_2.csprojResolveAssemblyReference.cache

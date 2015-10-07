@@ -19,40 +19,156 @@ namespace RatchetingInCsharp_10_3_15_2
 
         private void btnRunSimulation_Click(object sender, EventArgs e)
         {
+            
+               // If Item1 is selected and radioButton2 
+               // is checked, click radioButton1.
+               if (rbnSaveOutput.Checked == true)
+               {
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog(); 
+                    saveFileDialog1.InitialDirectory = Convert.ToString(Environment.SpecialFolder.MyDocuments); 
+                    //saveFileDialog1.Filter = "Comma separated values (*.CSV)|*.csv" ; 
+                    saveFileDialog1.FilterIndex = 1; 
+
+                    if(saveFileDialog1.ShowDialog() == DialogResult.OK) 
+                    { 
+                        Console.WriteLine(saveFileDialog1.FileName);//Do what you want here
+                    } 
+
+               }
+            
+
             double h = 1; // film thickness in microns- this needs to be 1 and everything else is scaled to this
 
             // Simulation Constants
-            int NumberCycles = 1;
-            bool result = Int32.TryParse(txtInputNumberCycles.Text, out NumberCycles);
-            if (result == false)
+            int NumberCycles = 1; // default number of  cycles is 1
+            bool result1 = Int32.TryParse(txtInputNumberCycles.Text, out NumberCycles);
+            if (result1 == false)
             {
                 MessageBox.Show("Input must be an integer.");
                 return;
             }    
-            int xSteps = 201;
-            int PointsPerCycle = 10000; // number of timepoints per cycle, higher number is slower, but should have more stable results
-            double H0 = 10 * h; // initial thickness of metal in units of h
-            double SimulationWidth = 200 * h; //will simulate a 200 um wide 
-            double Sfactor = 0; // sets level of S (0, 0.1, 1, or 10) 
             
-            // Material Properties Constants
-            double Ef = 333000; // Young's modulus of elastic film in MPa
-            double nu_f = 0.3; // Poisson's ratio of elastic film
-            double sigma0 = -0.014*Ef; // Initial in plane bilateral stress in MPa, this is a guess
+            int xSteps = 201; // default number of  xSteps is 201
+            bool result2 = Int32.TryParse(txtXSteps.Text, out xSteps);
+            if (result2 == false)
+            {
+                MessageBox.Show("Input must be an integer.");
+                return;
+            }
+            
+            int PointsPerCycle = 10000; // default number of  Points per cycle is 10000
+            bool result3 = Int32.TryParse(txtPointsPerCycle.Text, out PointsPerCycle);
+            if (result3 == false)
+            {
+                MessageBox.Show("Input must be an integer.");
+                return;
+            }             
+              
+            double H0factor = 10; // ratio between H0 and  h, should be about 10
+            bool result4 = Double.TryParse(txtH0Factor.Text, out H0factor);
+            if (result4 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }  
+
+            double SimulationWidth = 200; //will simulate a 200 um wide, h is always 1 um
+            bool result5 = Double.TryParse(txtSimulationWidth.Text, out SimulationWidth);
+            if (result5 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
+            double Sfactor = 0; // sets level of S (0, 0.1, 1, or 10) 
+            bool result6 = Double.TryParse(txtSFactor.Text, out Sfactor);
+            if (result6 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
             double Em = 200000; // Young's modulus of the metal in MPa
+            bool result7 = Double.TryParse(txtEm.Text, out Em);
+            if (result7 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
             double nu_m = 0.25; // Poisson's ratio of the metal
+            bool result8 = Double.TryParse(txtNuM.Text, out nu_m);
+            if (result8 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
             double alpha_m = 24e-6; // thermal coefficient of expansion of metal
-            double alpha_s = 14e-6; // thermal coefficient of expansion of substrate, (would be Si, but Si is 2.4??e-6)
+            bool result9 = Double.TryParse(txtAlphaM.Text, out alpha_m);
+            if (result9 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+            double alpha_s = 14e-6; // thermal coefficient of expansion of substrate, 
+            //(would be Si, but Si is 2.4??e-6)
+            bool result10 = Double.TryParse(txtAlphaS.Text, out alpha_s);
+            if (result10 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
             double TH = 90.0; // temperature in C of max cycle temp
+            bool result11 = Double.TryParse(txtTempHot.Text, out TH);
+            if (result11 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
             double TL = -10.0; // temperature in C of min cycle temp
+            bool result12 = Double.TryParse(txtTempCold.Text, out TL);
+            if (result12 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
             double Y = 100.0; // uniaxial yield strength of metal in MPa
+            bool result13 = Double.TryParse(txtYield.Text, out Y);
+            if (result13 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
+            double Ef = 333000; // Young's modulus of elastic film in MPa
+            bool result14 = Double.TryParse(txtEf.Text, out Ef);
+            if (result14 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
+            double nu_f = 0.3; // Poisson's ratio of elastic film
+            bool result15 = Double.TryParse(txtNuF.Text, out nu_f);
+            if (result15 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            } 
+
+// Derived Constants
+            double sigma0 = -0.014*Ef; // Initial in plane bilateral stress in MPa, this is a guess
+            double H0 = 10 * h; // initial thickness of metal in units of h
+
  
             // Simulation constants that you don't need to fiddle with
             double S = Sfactor * Ef; // Incorporates effect for elastic constraint values
             int Points = PointsPerCycle*NumberCycles; 
             double dT = 1 / Convert.ToDouble(PointsPerCycle); // timestep in units of cycles
             double deltax = (SimulationWidth / (xSteps-1));
-            int timepointcount = 0;
 
             // Derived Constants
             double eta_R = Em/(12*(1-nu_m))*Math.Pow(((Em*(alpha_m-alpha_s)*(TH-TL)/(1-nu_m)/Y)-2),-1);
@@ -84,7 +200,8 @@ namespace RatchetingInCsharp_10_3_15_2
             double[] Nxx_past = new double[xSteps];
             double[] p_past = new double[xSteps];
             double[] H_past = new double[xSteps];
-            
+            double[] w_abs = new double[xSteps];
+            double[] w_max = new double[NumberCycles+1];
 
 
           
@@ -124,38 +241,41 @@ namespace RatchetingInCsharp_10_3_15_2
             }
     
             // Time step through cycles and populate each matrix of w, ux, H, Nxx, taox, and p each cycle
-            for (int j = 1; j < Points; j++)   
+            for (int j = 1; j < Points; j++)
             {
-                for (int i= 3; i < xSteps-3; i++)
+                for (int i = 3; i < xSteps - 3; i++)
                 {
-                    w[i] = w_past[i] + dT/eta_R*((Math.Pow(H_past[i],3)/3*(p_past[i+1]-2*p_past[i]+p_past[i-1])/
-                        Math.Pow(deltax,2)+(Math.Pow(H_past[i],2)*(H_past[i+1]-H_past[i-1])/(2*deltax) * 
-                        ((p_past[i+1]-p_past[i-1])/(2*deltax))))-(((H_past[i+1]-H_past[i-1])/(2*deltax))*H_past[i]*
-                        taox_past[i]+Math.Pow(H_past[i],2)/2*(taox_past[i+1]-taox_past[i-1])/(2*deltax)));
-                    H[i] = H0+w[i];
-                    
-                    ux[i] = dT/eta_R*(taox_past[i]*H_past[i]-Math.Pow(H_past[i],2)/2*(p_past[i+1]-p_past[i-1])/(2*deltax))+ux_past[i];
+                    w[i] = w_past[i] + dT / eta_R * ((Math.Pow(H_past[i], 3) / 3 * (p_past[i + 1] - 2 * p_past[i] + p_past[i - 1]) /
+                        Math.Pow(deltax, 2) + (Math.Pow(H_past[i], 2) * (H_past[i + 1] - H_past[i - 1]) / (2 * deltax) *
+                        ((p_past[i + 1] - p_past[i - 1]) / (2 * deltax)))) - (((H_past[i + 1] - H_past[i - 1]) / (2 * deltax)) * H_past[i] *
+                        taox_past[i] + Math.Pow(H_past[i], 2) / 2 * (taox_past[i + 1] - taox_past[i - 1]) / (2 * deltax)));
+                    H[i] = H0 + w[i];
+
+                    ux[i] = dT / eta_R * (taox_past[i] * H_past[i] - Math.Pow(H_past[i], 2) / 2 * (p_past[i + 1] - p_past[i - 1]) / (2 * deltax)) + ux_past[i];
                 }
-                for (int i= 1; i < xSteps-1; i++)
+                for (int i = 1; i < xSteps - 1; i++)
                 {
-                    Nxx[i] = sigma0*h + Ef*h/(1-Math.Pow(nu_f,2))*((ux[i+1]-ux[i-1])/(2*deltax) + 0.5*Math.Pow((w[i+1]-w[i-1])/
-                        (2*deltax),2));
+                    Nxx[i] = sigma0 * h + Ef * h / (1 - Math.Pow(nu_f, 2)) * ((ux[i + 1] - ux[i - 1]) / (2 * deltax) + 0.5 * Math.Pow((w[i + 1] - w[i - 1]) /
+                        (2 * deltax), 2));
                 }
-                for (int i= 2; i < xSteps-2; i++)
+                for (int i = 2; i < xSteps - 2; i++)
                 {
                     taox[i] = (Nxx[i + 1] - Nxx[i - 1]) / (2 * deltax);
-    
+
                     if (w[i] > 0)
                     {
-                        p[i] = Df*((w[i-2]-4*w[i-1]+6*w[i]-4*w[i+1]+w[i+2])/Math.Pow(deltax,4))-Nxx[i]*((w[i+1]-2*w[i]+w[i-1])/
-                            Math.Pow(deltax,2))-taox[i]*((w[i+1]-w[i-1])/(2*deltax))-S*w[i];
+                        p[i] = Df * ((w[i - 2] - 4 * w[i - 1] + 6 * w[i] - 4 * w[i + 1] + w[i + 2]) / Math.Pow(deltax, 4)) - Nxx[i] * ((w[i + 1] - 2 * w[i] + w[i - 1]) /
+                            Math.Pow(deltax, 2)) - taox[i] * ((w[i + 1] - w[i - 1]) / (2 * deltax)) - S * w[i];
                     }
-                        
+
                     else
-                        p[i] = Df*((w[i-2]-4*w[i-1]+6*w[i]-4*w[i+1]+w[i+2])/Math.Pow(deltax,4))-Nxx[i]*((w[i+1]-2*w[i]+w[i-1])/
-                            Math.Pow(deltax,2))-taox[i]*((w[i+1]-w[i-1])/(2*deltax));
+                    {
+                        p[i] = Df * ((w[i - 2] - 4 * w[i - 1] + 6 * w[i] - 4 * w[i + 1] + w[i + 2]) / Math.Pow(deltax, 4)) - Nxx[i] * ((w[i + 1] - 2 * w[i] + w[i - 1]) /
+                            Math.Pow(deltax, 2)) - taox[i] * ((w[i + 1] - w[i - 1]) / (2 * deltax));
+                    }
+
                 }
-                for (int i=0; i < xSteps; i++)
+                for (int i = 0; i < xSteps; i++)
                 {
                     w_past[i] = w[i];
                     ux_past[i] = ux[i];
@@ -163,16 +283,69 @@ namespace RatchetingInCsharp_10_3_15_2
                     Nxx_past[i] = Nxx[i];
                     p_past[i] = p[i];
                     H_past[i] = H[i];
+                    w_abs[i] = Math.Abs(w[i]);
+                }
+
+                for (int i = 0; i < NumberCycles; i++)
+                {
+                    if (j == i * PointsPerCycle)
+                    {
+                        double max = w_abs.Max();
+                        w_max[i] = max;
+                    }
                 }
                 pbarProgress.Value = Convert.ToInt32(Convert.ToDouble(j) / Convert.ToDouble(Points) * 100);
-            }
 
-            for (int i = 1; i < xSteps; i++)
-            {
-                chtDisplacement.Series["Displacement (um)"].Points.AddXY(i*deltax, w[i]);
-            }
+                chtDisplacement.Series["Displacement (um)"].Points.Clear();
+                for (int i = 1; i < xSteps; i++)
+                {
+                    chtDisplacement.Series["Displacement (um)"].Points.AddXY(i * deltax, w[i]);
+                }
 
+            }   
         }
+    }    
+}
 
+/*
+private void ClickMyRadioButton()
+{
+   // If Item1 is selected and radioButton2 
+   // is checked, click radioButton1.
+   if (listBox1.Text == "Item1" && radioButton2.Checked)
+   {
+      radioButton1.PerformClick();
+   }
+}
+private void button1_Click(object sender, System.EventArgs e)
+ {
+     Stream myStream ;
+     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+     saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"  ;
+     saveFileDialog1.FilterIndex = 2 ;
+     saveFileDialog1.RestoreDirectory = true ;
+
+     if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+     {
+         if((myStream = saveFileDialog1.OpenFile()) != null)
+         {
+             // Code to write the stream goes here.
+             myStream.Close();
+         }
+     }
+ }
+
+ * 
+public static void SaveArrayAsCSV<T>(T[] arrayToSave, string fileName)
+{
+    using (StreamWriter file = new StreamWriter(fileName))
+    {
+        foreach (T item in arrayToSave)
+        {
+            file.Write(item + ",");
+        }
     }
 }
+
+ */
