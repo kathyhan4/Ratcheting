@@ -40,7 +40,7 @@ namespace RatchetingInCsharp_10_3_15_2
                }
             
 
-            double h = 1; // film thickness in microns- this needs to be 1 and everything else is scaled to this
+            //double h = 1; // film thickness in microns- this needs to be 1 and everything else is scaled to this
 
             // Simulation Constants
             int NumberCycles = 1; // default number of  cycles is 1
@@ -160,11 +160,35 @@ namespace RatchetingInCsharp_10_3_15_2
             {
                 MessageBox.Show("Input must be a double.");
                 return;
-            } 
+            }
+
+            double sigma0_factor = -0.014; // Poisson's ratio of elastic film
+            bool result16 = Double.TryParse(txtSigmaFactor.Text, out sigma0_factor);
+            if (result16 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
+            double A0 = 0.01; // Poisson's ratio of elastic film
+            bool result17 = Double.TryParse(txtA0.Text, out A0);
+            if (result17 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
+
+            double h = 1; // Poisson's ratio of elastic film
+            bool result18 = Double.TryParse(txth.Text, out h);
+            if (result18 == false)
+            {
+                MessageBox.Show("Input must be a double.");
+                return;
+            }
 
 // Derived Constants
-            double sigma0 = -0.014*Ef; // Initial in plane bilateral stress in MPa, this is a guess
-            double H0 = 10 * h; // initial thickness of metal in units of h
+            double sigma0 = sigma0_factor * Ef; // Initial in plane bilateral stress in MPa, this is a guess
+            double H0 = H0factor * h; // initial thickness of metal in units of h
 
  
             // Simulation constants that you don't need to fiddle with
@@ -178,7 +202,7 @@ namespace RatchetingInCsharp_10_3_15_2
             double Df = Ef * Math.Pow(h,3)/(12*(1-Math.Pow(nu_f,2)));
             
             // Initial conditions constants
-            double A0 = h * 0.01; // amplitude of initial perturbation
+            //double A0 = h * 0.01; // amplitude of initial perturbation
             double delta = h*20; // denominator of exponent for initial film height perturbatione your system undergoes ratcheting, 
             double Criteria = Em*(alpha_m-alpha_s)*(TH-TL)/((1-nu_m)*Y); // if this is more than 2 then the system will ratchet
 
@@ -207,7 +231,6 @@ namespace RatchetingInCsharp_10_3_15_2
             double[] w_max = new double[NumberCycles+1];
 
 
-          
             for (int i = 0; i < xSteps; i++)
             {
                 H[i] = H0;
@@ -365,30 +388,3 @@ namespace RatchetingInCsharp_10_3_15_2
     }    
 }
 
-/* FileName gives the path and root for the file names, must add specifier for which type of file and .csv extension
-string filePath = pathDesktop + "\\mycsvfile.csv";
-
-        if (!File.Exists(filePath))
-        {
-            File.Create(filePath).Close();
-        }
-        string delimter = ",";
-        List<string[]> output = new List<string[]>();
-
-        //flexible part ... add as many object as you want based on your app logic
-        output.Add(new string[] {"TEST1","TEST2"});
-        output.Add(new string[] {"TEST3","TEST4"});
-
-        int length = output.Count;
-
-        using (System.IO.TextWriter writer = File.CreateText(filePath))
-        {
-
-            for (int index = 0; index < length; index++)
-            {
-                writer.WriteLine(string.Join(delimter, output[index]));
-            }
-        }
-
-
- */

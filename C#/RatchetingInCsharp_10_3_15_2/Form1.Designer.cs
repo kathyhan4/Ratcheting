@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInputNumberCycles = new System.Windows.Forms.TextBox();
             this.btnRunSimulation = new System.Windows.Forms.Button();
@@ -71,6 +71,12 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtYield = new System.Windows.Forms.TextBox();
             this.rbnSaveOutput = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSigmaFactor = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtA0 = new System.Windows.Forms.TextBox();
+            this.txth = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chtDisplacement)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,17 +109,17 @@
             // 
             // chtDisplacement
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtDisplacement.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chtDisplacement.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chtDisplacement.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtDisplacement.Legends.Add(legend1);
             this.chtDisplacement.Location = new System.Drawing.Point(12, 65);
             this.chtDisplacement.Name = "chtDisplacement";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Displacement (um)";
-            this.chtDisplacement.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Displacement (um)";
+            this.chtDisplacement.Series.Add(series1);
             this.chtDisplacement.Size = new System.Drawing.Size(694, 422);
             this.chtDisplacement.TabIndex = 3;
             this.chtDisplacement.Text = "chart1";
@@ -145,7 +151,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 618);
+            this.label4.Location = new System.Drawing.Point(746, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 8;
@@ -153,7 +159,7 @@
             // 
             // txtPointsPerCycle
             // 
-            this.txtPointsPerCycle.Location = new System.Drawing.Point(23, 636);
+            this.txtPointsPerCycle.Location = new System.Drawing.Point(748, 218);
             this.txtPointsPerCycle.Name = "txtPointsPerCycle";
             this.txtPointsPerCycle.Size = new System.Drawing.Size(92, 20);
             this.txtPointsPerCycle.TabIndex = 9;
@@ -233,7 +239,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(22, 671);
+            this.label10.Location = new System.Drawing.Point(24, 625);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 15);
             this.label10.TabIndex = 18;
@@ -243,7 +249,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(177, 671);
+            this.label11.Location = new System.Drawing.Point(179, 625);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 15);
             this.label11.TabIndex = 19;
@@ -253,7 +259,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(353, 671);
+            this.label12.Location = new System.Drawing.Point(355, 625);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 15);
             this.label12.TabIndex = 20;
@@ -263,7 +269,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(531, 671);
+            this.label13.Location = new System.Drawing.Point(533, 625);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 15);
             this.label13.TabIndex = 21;
@@ -272,7 +278,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(528, 692);
+            this.label14.Location = new System.Drawing.Point(530, 646);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(162, 13);
             this.label14.TabIndex = 22;
@@ -280,7 +286,7 @@
             // 
             // txtAlphaS
             // 
-            this.txtAlphaS.Location = new System.Drawing.Point(531, 708);
+            this.txtAlphaS.Location = new System.Drawing.Point(533, 662);
             this.txtAlphaS.Name = "txtAlphaS";
             this.txtAlphaS.Size = new System.Drawing.Size(100, 20);
             this.txtAlphaS.TabIndex = 23;
@@ -289,7 +295,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(350, 788);
+            this.label15.Location = new System.Drawing.Point(352, 742);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(162, 13);
             this.label15.TabIndex = 24;
@@ -297,7 +303,7 @@
             // 
             // txtAlphaM
             // 
-            this.txtAlphaM.Location = new System.Drawing.Point(353, 804);
+            this.txtAlphaM.Location = new System.Drawing.Point(355, 758);
             this.txtAlphaM.Name = "txtAlphaM";
             this.txtAlphaM.Size = new System.Drawing.Size(100, 20);
             this.txtAlphaM.TabIndex = 25;
@@ -306,7 +312,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(158, 618);
+            this.label16.Location = new System.Drawing.Point(656, 573);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 13);
             this.label16.TabIndex = 26;
@@ -314,7 +320,7 @@
             // 
             // txtTempHot
             // 
-            this.txtTempHot.Location = new System.Drawing.Point(161, 636);
+            this.txtTempHot.Location = new System.Drawing.Point(659, 589);
             this.txtTempHot.Name = "txtTempHot";
             this.txtTempHot.Size = new System.Drawing.Size(100, 20);
             this.txtTempHot.TabIndex = 27;
@@ -323,7 +329,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(305, 618);
+            this.label17.Location = new System.Drawing.Point(528, 573);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(107, 13);
             this.label17.TabIndex = 28;
@@ -331,7 +337,7 @@
             // 
             // txtTempCold
             // 
-            this.txtTempCold.Location = new System.Drawing.Point(305, 636);
+            this.txtTempCold.Location = new System.Drawing.Point(531, 589);
             this.txtTempCold.Name = "txtTempCold";
             this.txtTempCold.Size = new System.Drawing.Size(100, 20);
             this.txtTempCold.TabIndex = 29;
@@ -340,7 +346,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(174, 692);
+            this.label18.Location = new System.Drawing.Point(176, 646);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(119, 13);
             this.label18.TabIndex = 30;
@@ -348,7 +354,7 @@
             // 
             // txtEf
             // 
-            this.txtEf.Location = new System.Drawing.Point(180, 708);
+            this.txtEf.Location = new System.Drawing.Point(182, 662);
             this.txtEf.Name = "txtEf";
             this.txtEf.Size = new System.Drawing.Size(100, 20);
             this.txtEf.TabIndex = 31;
@@ -357,7 +363,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(174, 737);
+            this.label19.Location = new System.Drawing.Point(176, 691);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(79, 13);
             this.label19.TabIndex = 32;
@@ -365,7 +371,7 @@
             // 
             // txtNuF
             // 
-            this.txtNuF.Location = new System.Drawing.Point(180, 753);
+            this.txtNuF.Location = new System.Drawing.Point(182, 707);
             this.txtNuF.Name = "txtNuF";
             this.txtNuF.Size = new System.Drawing.Size(100, 20);
             this.txtNuF.TabIndex = 33;
@@ -374,7 +380,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(350, 692);
+            this.label20.Location = new System.Drawing.Point(352, 646);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(88, 13);
             this.label20.TabIndex = 34;
@@ -382,7 +388,7 @@
             // 
             // txtEm
             // 
-            this.txtEm.Location = new System.Drawing.Point(353, 708);
+            this.txtEm.Location = new System.Drawing.Point(355, 662);
             this.txtEm.Name = "txtEm";
             this.txtEm.Size = new System.Drawing.Size(100, 20);
             this.txtEm.TabIndex = 35;
@@ -391,7 +397,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(350, 737);
+            this.label21.Location = new System.Drawing.Point(352, 691);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(79, 13);
             this.label21.TabIndex = 36;
@@ -399,7 +405,7 @@
             // 
             // txtNuM
             // 
-            this.txtNuM.Location = new System.Drawing.Point(353, 753);
+            this.txtNuM.Location = new System.Drawing.Point(355, 707);
             this.txtNuM.Name = "txtNuM";
             this.txtNuM.Size = new System.Drawing.Size(100, 20);
             this.txtNuM.TabIndex = 37;
@@ -408,7 +414,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(350, 836);
+            this.label22.Location = new System.Drawing.Point(352, 790);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(144, 13);
             this.label22.TabIndex = 38;
@@ -416,7 +422,7 @@
             // 
             // txtYield
             // 
-            this.txtYield.Location = new System.Drawing.Point(357, 855);
+            this.txtYield.Location = new System.Drawing.Point(359, 809);
             this.txtYield.Name = "txtYield";
             this.txtYield.Size = new System.Drawing.Size(100, 20);
             this.txtYield.TabIndex = 39;
@@ -425,18 +431,77 @@
             // rbnSaveOutput
             // 
             this.rbnSaveOutput.AutoSize = true;
-            this.rbnSaveOutput.Location = new System.Drawing.Point(526, 596);
+            this.rbnSaveOutput.Location = new System.Drawing.Point(748, 29);
             this.rbnSaveOutput.Name = "rbnSaveOutput";
             this.rbnSaveOutput.Size = new System.Drawing.Size(85, 17);
             this.rbnSaveOutput.TabIndex = 40;
             this.rbnSaveOutput.Text = "Save Output";
             this.rbnSaveOutput.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(414, 574);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Factor Sigma0";
+            // 
+            // txtSigmaFactor
+            // 
+            this.txtSigmaFactor.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSigmaFactor.Location = new System.Drawing.Point(412, 590);
+            this.txtSigmaFactor.Name = "txtSigmaFactor";
+            this.txtSigmaFactor.ReadOnly = true;
+            this.txtSigmaFactor.Size = new System.Drawing.Size(100, 20);
+            this.txtSigmaFactor.TabIndex = 42;
+            this.txtSigmaFactor.Text = "-0.014";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(746, 502);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(20, 13);
+            this.label23.TabIndex = 43;
+            this.label23.Text = "A0";
+            // 
+            // txtA0
+            // 
+            this.txtA0.Location = new System.Drawing.Point(748, 518);
+            this.txtA0.Name = "txtA0";
+            this.txtA0.Size = new System.Drawing.Size(100, 20);
+            this.txtA0.TabIndex = 44;
+            this.txtA0.Text = "0.01";
+            // 
+            // txth
+            // 
+            this.txth.Location = new System.Drawing.Point(749, 446);
+            this.txth.Name = "txth";
+            this.txth.Size = new System.Drawing.Size(100, 20);
+            this.txth.TabIndex = 45;
+            this.txth.Text = "1";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(746, 430);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(13, 13);
+            this.label24.TabIndex = 46;
+            this.label24.Text = "h";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 874);
+            this.ClientSize = new System.Drawing.Size(903, 874);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txth);
+            this.Controls.Add(this.txtA0);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtSigmaFactor);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.rbnSaveOutput);
             this.Controls.Add(this.txtYield);
             this.Controls.Add(this.label22);
@@ -527,6 +592,12 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtYield;
         private System.Windows.Forms.RadioButton rbnSaveOutput;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSigmaFactor;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtA0;
+        private System.Windows.Forms.TextBox txth;
+        private System.Windows.Forms.Label label24;
     }
 }
 
